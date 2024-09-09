@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Title }}</title>
+
+<!-- load bootstrap scss -->
+<!-- source of the code: https://github.com/gohugoio/hugo-mod-bootstrap-scss -->
+{{ $options := dict "enableSourceMap" true }}
+
+{{ if hugo.IsProduction}}
+    {{ $options := dict "enableSourceMap" false "outputStyle" "compressed" }}
+{{ end }}
+
+{{ $styles := resources.Get "scss/style.scss" }}
+{{ $styles = $styles | resources.ToCSS $options }}
+
+{{ if hugo.IsProduction }}
+    {{ $styles = $styles | fingerprint }}
+{{ end }}
+<link href="{{ $styles.RelPermalink }}" rel="stylesheet" />

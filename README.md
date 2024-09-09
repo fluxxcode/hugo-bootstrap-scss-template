@@ -1,4 +1,4 @@
-# Hugo Bootstrap template
+# Hugo Bootstrap SCSS template
 This is a Hugo project template that implements the bare minimum for integrating Bootstrap (v5.3) with custom SCSS using the [hugo-mod-bootstrap-scss](https://github.com/gohugoio/hugo-mod-bootstrap-scss) module.
 
 Using your own SCSS and integrating bootstrap in this way makes it possible to customize bootstrap.
